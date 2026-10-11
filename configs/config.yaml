@@ -1,0 +1,38 @@
+data_paths:
+  input_image_dir: ""
+  output_mask_dir: ""
+  ground_truth_mask_dir: ""
+  metrics_output_file: ""
+  output_dir: ""
+  log_file: ""
+  knowledge_base_json: ""
+  feature_matrix_path: ""
+
+evaluation_configs:
+  enable_visualization: false
+  visualization_sample_ratio: 0.1
+  results_filename: "results.json"
+
+model_configs:
+  encoder: "blip_feature_extractor"
+  encoder_model_type: "base"
+  reasoning_engine:
+    model_path: ""
+    use_int8: True
+    use_flash_attention_2: false
+  sam2:
+    root_dir: ""
+    checkpoint: ""
+    model_cfg: ""
+
+faiss_configs:
+  feature_dim: 256
+
+retrieval_configs:
+  image_text_weight: 1.0
+  size_similarity_weight: 0
+  top_k: 6
+
+logic_thresholds:
+  tier1_similarity: 0.95
+  tier2_similarity: 0.85
